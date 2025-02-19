@@ -1,11 +1,16 @@
 import React, { useState } from "react";
-import './Contact.css'
+import emailjs from "@emailjs/browser";
+import "./Contact.css";
+
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
+
+  const [isSent, setIsSent] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -14,10 +19,32 @@ const Contact: React.FC = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Formulario enviado:", formData);
-    // Aquí puedes manejar el envío del formulario
+
+    try {
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+      };
+
+      await emailjs.send(
+        "service_cxamlaf", // Reemplaza con tu Service ID
+        "template_5t82a1h", // Reemplaza con tu Template ID
+        templateParams,
+        "hRSiJamaLq6Y7oKoj" // Reemplaza con tu Public Key
+      );
+
+      setIsSent(true);
+      setFormData({ name: "", email: "", message: "" });
+
+      setTimeout(() => setIsSent(false), 5000);
+    } catch (err) {
+      console.log(err)
+      setError("Hubo un problema al enviar el mensaje, intenta nuevamente.");
+      setTimeout(() => setError(""), 5000);
+    }
   };
 
   return (
@@ -50,6 +77,8 @@ const Contact: React.FC = () => {
           ></textarea>
           <button type="submit">Enviar Mensaje</button>
         </form>
+        {isSent && <p className="success-message">Mensaje enviado con éxito 🎉</p>}
+        {error && <p className="error-message">{error}</p>}
       </div>
     </section>
   );

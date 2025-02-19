@@ -2,6 +2,7 @@ import React from 'react';
 import './Projects.css'; // Asegúrate de tener un archivo CSS para estilos
 import kinefit from '../Imagenes/Kinefit-Project.png'
 import ClubBelgrano from '../Imagenes/ClubBelgrano-Project.png'
+import Catalogo from '../Imagenes/Catalogo-Proyect.jpg'
 const projects = [
   {
     title: 'Web Centro "Kinefit" y sistema gestor de turnos',
@@ -16,6 +17,13 @@ const projects = [
     image: ClubBelgrano,
     liveLink: 'https://clubbelgrano.com.ar/',
     codeLink: 'https://github.com/santicbsn14/WebOficialClubBelgrano1'
+  },
+  {
+    title:'Catalogo de productos para emprendimiento MyB ',
+    description:'Desarrollo de un catalogo, para ofrecer la linea de productos a los clientes lo mas prolijo posible, y tambien dando la posibilidad de que armen sus pedidos para luego ser redirigidos al whatsapp de la empresa con el pedido pre-armado',
+    image: Catalogo,
+    liveLink:'https://myb-distribuidora-catalogo.vercel.app/',
+    codeLink:'https://github.com/santicbsn14/Catalogo-Emprendimiento'
   }
 ];
 
