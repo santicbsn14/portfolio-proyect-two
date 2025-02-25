@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from '../../assets/Santiago-Viale-Sistemas.png'
-import './NavBar.css'; // Asegúrate de tener un archivo CSS para estilos
+import './Navbar.css'; // Asegúrate de tener un archivo CSS para estilos
 
 const NavBar: React.FC = () => {
   const scrollToSection = (id: string) => {
