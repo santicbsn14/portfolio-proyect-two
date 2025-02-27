@@ -1,8 +1,8 @@
 import React from 'react';
 import './Projects.css'; // Asegúrate de tener un archivo CSS para estilos
-import kinefit from '../Imagenes/Kinefit-Project.png'
+import kinefit from '../Imagenes/Kinefit-Project.jpg'
 import ClubBelgrano from '../Imagenes/ClubBelgrano-Project.png'
-import Catalogo from '../Imagenes/Catalogo-Proyect.jpg'
+import Catalogo from '../Imagenes/Catalogo-Project.jpg'
 const projects = [
   {
     title: 'Web Centro "Kinefit" y sistema gestor de turnos',
@@ -20,7 +20,7 @@ const projects = [
   },
   {
     title:'Catalogo de productos para emprendimiento MyB ',
-    description:'Desarrollo de un catalogo, para ofrecer la linea de productos a los clientes lo mas prolijo posible, y tambien dando la posibilidad de que armen sus pedidos para luego ser redirigidos al whatsapp de la empresa con el pedido pre-armado',
+    description:"Desarrollo de un catálogo digital para presentar la línea de productos de manera clara y organizada. La plataforma permite a los clientes armar sus pedidos de forma sencilla y, al finalizar, los redirige automáticamente al WhatsApp de la empresa con el pedido preconfigurado para su confirmación.",
     image: Catalogo,
     liveLink:'https://myb-distribuidora-catalogo.vercel.app/',
     codeLink:'https://github.com/santicbsn14/Catalogo-Emprendimiento'

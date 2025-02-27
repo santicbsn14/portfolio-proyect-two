@@ -26,9 +26,37 @@
     padding-left: 20px;
   }
   
+  .about-content {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se acomoden en varias líneas */
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Espaciado entre elementos */
+  }
+  
+  .about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
   .about-image img {
+    max-width: 100%;
+    height: auto;
     border-radius: 10px;
-    max-width: 300px; /* Ajusta el tamaño según lo necesites */
+  }
+  
+  /* Ajustes para pantallas más pequeñas */
+  @media screen and (max-width: 768px) {
+    .about-content {
+      flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+      text-align: center;
+    }
+  
+    .about-image img {
+      max-width: 80%; /* Reducimos el tamaño de la imagen */
+    }
   }
   .skills-icons {
     display: flex;
